@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6228mq81pc6h"]
+
+[ext_resource type="Script" path="res://Wharehouse.gd" id="1_2lwpa"]
+
+[node name="Wharehouse" type="TileMap"]
+format = 2
+script = ExtResource("1_2lwpa")
