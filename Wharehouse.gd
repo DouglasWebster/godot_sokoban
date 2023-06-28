@@ -5,8 +5,11 @@ extends TileMap
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var tileSet : TileSet = preload("res://Resources/wall_tile_set_big.tres")
-	tile_set = tileSet
+	tile_set = preload("res://Resources/wall_tile_set_big.tres")
+	
+	var _tileSize : Vector2i = tile_set.tile_size
+	
+	
 	
 	var wall_cells = []
 	var xPositions = []
@@ -24,9 +27,11 @@ func _ready():
 			
 	for y in range(0, 11):
 		for x in xPositions[y]:
-			wall_cells.push_back(Vector2i(x+3,y+3))
-	
+			var cell_pos = Vector2i(x+3, y+3)
+			wall_cells.push_back(cell_pos)
+#			set_cell(0, cell_pos, 0, Vector2i(1,3))
 	set_cells_terrain_connect(0, wall_cells, 0, 0)
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
